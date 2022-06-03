@@ -1,111 +1,90 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
-
- * @format
- * @flow strict-local
- */
-import {Icon} from 'native-base'
-import React from 'react';
+import * as React from 'react';
+import { NavigationContainer,DefaultTheme,DarkTheme
+ } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
-  StyleSheet,
-TextInput,
   View,
-  ScrollView,
-  Text,
-  ImageBackground,
-  Dimensions,
-  Button
-  
-} from 'react-native';
+  ScrollView,Image,
+  LogBox
+} from 'react-native'
+import { NativeBaseProvider } from 'native-base';
+import Login from "./component/Login";
+import Home from "./component/Home";
+import Search from './component/Search';
+import VideoPlayer from './component/VideoPlayer';
+import Suscribe from './component/Suscribe';
+import Explore from './component/Explore'
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { Reducer } from './reducer/Reducer';
+// <Stack.Screen name='Login' component={Login} options={{ headerShown: false }} />
+const store = createStore(Reducer)
+const Stack = createNativeStackNavigator();
+const Bottom = createBottomTabNavigator();
+const Root = () => {
+  return (
+    <Bottom.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color}) => {
+          let iconName;
 
+          if (route.name === 'Home') {
+            //iconName = require('./asset/accueil.png')
+            iconName = 'https://cdn-icons-png.flaticon.com/128/1946/1946488.png'
+              
+          } else if (route.name === 'Explore') {
+            //iconName = require('./asset/boussole.png')
+            iconName = 'https://cdn-icons-png.flaticon.com/128/876/876752.png'
+          }else if(route.name === 'Suscribe'){
+            //iconName = require('./asset/subscribe.png')
+            iconName = 'https://cdn-icons.flaticon.com/png/128/2989/premium/2989849.png?token=exp=1653512645~hmac=c7e69c2198167a214c7be7e70ed96b10'
+          }
 
-
-
-   function App(){
-    return (
-    <ScrollView  style={{flex : 1, backgroundColor:'#ffffff'}} showsVerticalScrollIndicator={false}>
-      <ImageBackground source={require('./asset/index.jpeg')}
-      style ={{ height : Dimensions.get('window').height / 2.5}}>
-       <View style = {styles.firstVue}>
-          <Text style ={styles.firstVueText}>Movies Go</Text>
-       </View>
-          
-      </ImageBackground>
-      <View style = {styles.bottomView}>
-        <View style = {{padding : 30}}>
-            <Text style = {{color : '#4632A1',fontSize : 34}}>Welcome</Text>
-            <Text>
-              Don't have an account ?
-            <Text style = {{color :'red',fontStyle : 'italic'}}> Register Now</Text>
-            </Text>
-            <View style ={{marginTop : 30}}>
-                <View style = {styles.input}>
-                      <Text>Email</Text>
-                      <TextInput value = "pas@gmail.com" keyboardType='email-address'></TextInput>
-                </View>
-                <View style = {styles.input1}>
-                        <Text>Password</Text>
-                        <TextInput value = "******"></TextInput>
-                </View>
-                <View style = {styles.forgotPassword}>
-                   <View style ={{flex : 1}}>
-                      <Text style ={{color :'#8f9195'}}>Remember Me</Text>
-                   </View>
-                   <View style = {{flex : 1}}>
-                      <Text style ={{color :'#8f9195',alignSelf : 'flex-end'}}>Remember Me</Text>
-                   </View>
-                </View>
-                <View style ={{height : 90, alignItems: 'center',justifyContent:'center',borderTopEndRadius:20,borderTopStartRadius:20}}>
-                    <Button title='Login' color='#4632A1'/>
-                </View>
-            </View>
-        </View>
-      </View>
-
-    </ScrollView>
-         
-);
+          // You can return any component that you like here!
+          return <Image source={{uri:iconName}} style={{height:30,width:30,tintColor:color}}/>;
+        },
+        tabBarActiveTintColor: 'skyblue',
+        tabBarInactiveTintColor: 'gray',
+      })}
+    >
+      <Bottom.Screen name='Home' component={Home} options={{ headerShown: false }} />
+      <Bottom.Screen name='Explore' component={Explore} options={{ headerShown: false }} />
+      <Bottom.Screen name='Suscribe' component={Suscribe} options={{ headerShown: false }} />
+    </Bottom.Navigator>
+  );
 
 }
-const styles = StyleSheet.create({
-  firstVue : {
-    fontSize : 100,
-    justifyContent : 'center',
-    alignItems : 'center',
-    flex : 1
-  },
-  firstVueText : {
-    color : '#FFFFFF',
-    fontSize  : 30,
-    fontWeight:'bold',
-    textTransform : 'uppercase'
-    },
-  bottomView : {
-    flex : 1.5,
-    backgroundColor : '#FFFFFF',
-    bottom : 50,
-    borderTopStartRadius : 60,
-    borderTopEndRadius : 50,
-  },
-  input : {
+const App = () => {
+  const customDarkTheme = {
+    ...DarkTheme,
+    color:{
+      ...DarkTheme.colors,
+      headerColor:"#404040"
+    }
+  }
 
-    borderColor:'#4632A1',
-    borderBottomWidth:3
-  },
-
-  input1 : {
-    marginTop : 10,
-    borderColor:'#4632A1',
-    borderBottomWidth:3
-  },
-  forgotPassword : {
-    height : 50,
-    marginTop : 20,
-    flexDirection : 'row',
-    flexe : 1
-  },
-  
-});
-
+  const customDefaultTheme = {
+    ...DefaultTheme,
+    color:{
+      ...DefaultTheme.colors,
+      headerColor:"white"
+    }
+  }
+  return (
+    //<FirebaseContext.Provider value={new Firebase()}>
+    <Provider store={store}>
+      <NavigationContainer initialRouteName="Home"
+      screenOptions={{ headerShown: false }} >
+      <Stack.Navigator>
+        <Stack.Screen name='Root' component={Root} options={{ headerShown: false }} />
+        <Stack.Screen name='Search' component={Search} options={{ headerShown: false }} />
+        <Stack.Screen name='VideoPlayer' component={VideoPlayer} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    </Provider>
+    // </FirebaseContext.Provider>
+  );
+};
+LogBox.ignoreLogs(['Warning: Async Storage has been extracted from react-native core']);
 export default App;

@@ -1,15 +1,11 @@
 [
     {
-        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_a.png.flat",
+        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-hdpi/a.png"
     },
     {
         "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -24,20 +20,32 @@
         "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_v.png.flat",
+        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-hdpi/v.png"
+    },
+    {
+        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/takam/projectReact/Movies/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "/home/takam/projectReact/Movies/android/app/build/intermediates/merged_res/debug/drawable_rn_edit_text_material.xml.flat",
